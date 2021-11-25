@@ -1,16 +1,11 @@
-"""
-CP1404/CP5632 - Practical
-Broken program to determine score status
-"""
-
 import random
 
 
 def main():
-    score = float(input("Enter score: "))
-    print(get_grade_classification(score))
-    random_score = random.randint(0, 100)
-    print(f"The score {random_score} is {get_grade_classification(random_score)}")
+    scores_num = int(input("Enter number of score: "))
+    for i in range(scores_num):
+        score = random.randint(0, 100)
+        print(f"{score} is {get_grade_classification(score)}")
 
 
 def get_grade_classification(score):
