@@ -7,11 +7,6 @@ SPECIAL_CHARACTERS = "!@#$%^&*()_-=+`~,./'[]<>?{}|\\"
 def main():
     """Program to get and check a user's password."""
     password = get_password()
-    print_asterisks(password)
-
-
-def print_asterisks(password):
-    """Prints the asterisks"""
     print("Your {}-character password is valid: {}".format(len(password),
                                                            to_asterisks(password)))
 
