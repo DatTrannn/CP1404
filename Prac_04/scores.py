@@ -21,13 +21,25 @@ def main():
         score_strings = score_line.strip().split(",")
         score_numbers = [int(value) for value in score_strings]
         score_values.append(score_numbers)
+    scores_by_subjects = convert_to_score_by_subjects(score_values)
     scores_file.close()
     for i in range(len(subjects)):
         print(subjects[i], "Scores:")
-        for score in score_values[i]:
+        for score in scores_by_subjects[i]:
             print(score)
-        print("Max:", max(score_values[i]))
-        print()
+        print("Max:", max(scores_by_subjects[i]))
+        print("Min:", min(scores_by_subjects[i]))
+        print("Avg:", sum(scores_by_subjects[i]) / len(scores_by_subjects[i]))
+
+
+def convert_to_score_by_subjects(score_values):
+    scores_by_subjects = []
+    for i in range(5):
+        scores_by_a_subject = []
+        for scores in score_values:
+            scores_by_a_subject.append(scores[i])
+        scores_by_subjects.append(scores_by_a_subject)
+    return scores_by_subjects
 
 
 main()
