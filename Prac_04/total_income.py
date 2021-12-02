@@ -21,7 +21,7 @@ def print_report(incomes, number_of_months):
     total = 0
     for month, income in enumerate(incomes):
         total += income
-        print("Month {:2} - Income: ${:10.2f} Total: ${:10.2f}".format(month, income, total))
+        print("Month {:2} - Income: ${:10.2f} Total: ${:10.2f}".format(month + 1, income, total))
 
 
 main()
