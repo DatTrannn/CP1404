@@ -3,9 +3,12 @@ def main():
                  'BaseStdIn', 'Command', 'ExecState', 'InteractiveConsole', 'InterpreterInterface', 'StartServer',
                  'bob']
     numbers = []
-    for i in range(5):
-        number = int(input("Number: "))
+    count = 1
+    number = int(input("Number 1: "))
+    while number >= 0:
         numbers.append(number)
+        count += 1
+        number = int(input(f"Number {count}: "))
     print("The first number is", numbers[0])
     print("The last number is", numbers[-1])
     print("The smallest number is", min(numbers))
