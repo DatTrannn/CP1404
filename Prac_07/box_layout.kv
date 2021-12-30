@@ -23,3 +23,14 @@ BoxLayout:
             text: 'Enter your name'
             color: (1, 1, 0, 1)
             size_hint_x: 0.7
+    BoxLayout:
+        orientation: 'horizontal'
+        Button:
+            text: 'Check'
+            on_press: app.calculate_grade()
+            size_hint_x: 0.3
+        TextInput:
+            id: input_score
+            text: app.grade
+            size_hint_x: 0.7
+
