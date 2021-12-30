@@ -1,0 +1,31 @@
+from kivy.app import App
+from kivy.lang import Builder
+from kivy.uix.label import Label
+
+
+class DynamicLabelApp(App):
+    """Main program - Kivy app to run dynamic label creation."""
+    def __init__(self, **kwargs):
+        """Construct main app."""
+        super().__init__(**kwargs)
+        self.names = ["Dat", "Bin", "Zin", "David"]
+
+    def build(self):
+        """
+        Build the Kivy GUI.
+        :return: reference to the root Kivy widget
+        """
+        self.title = "Dynamic Labels"
+        self.root = Builder.load_file("dynamic_labels.kv")
+        self.create_widgets()
+        return self.root
+
+    def create_widgets(self):
+        """Create labels from dictionary entries and add them to the GUI."""
+        for name in self.names:
+            temp_label = Label(text=name)
+            temp_label.bind()
+            self.root.ids.main.add_widget(temp_label)
+
+
+DynamicLabelApp().run()
