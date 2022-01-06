@@ -7,7 +7,7 @@ File and class example - opens/reads a file, stores in objects of custom class
 import csv
 from collections import namedtuple
 
-from prac_08.programming_language import ProgrammingLanguage
+from programming_language import ProgrammingLanguage
 
 
 def main():
@@ -34,7 +34,7 @@ def main():
         # construct a ProgrammingLanguage object using the elements
         # year should be an int
         language = ProgrammingLanguage(parts[0], parts[1], reflection,
-                                       int(parts[3]))
+                                       parts[3], int(parts[4]))
 
         # add the language we've just constructed to the list
         languages.append(language)
