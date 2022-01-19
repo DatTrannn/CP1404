@@ -4,12 +4,13 @@ Testing demo using assert and doctest
 """
 
 import doctest
-from prac_06.car import Car
+from Prac_06.car import Car
 
 
 def repeat_string(s, n):
     """Repeat string s, n times, with spaces in between."""
-    return s * n
+    strings = [s] * n
+    return ' '.join(strings)
 
 
 def is_long_word(word, length=5):
